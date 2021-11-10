@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "v-calendar": "^2.3.4",
+    "vue": "^2.6.11",
+    "vue-cal": "^3.10.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -18,7 +20,12 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "node-sass": "^4.14.1",
+    "pug": "^3.0.2",
+    "pug-plain-loader": "^1.1.0",
+    "core-js": "^3.19.1",
+    "sass-loader": "^10.1.1"
   },
   "eslintConfig": {
     "root": true,
