@@ -23,6 +23,7 @@ div
       //- Full-power calendar.
       vue-cal.demo.full-cal.vuecal--full-height-delete(
         hide-weekends
+        :disable-views="['years', 'year']"
         :selected-date="selectedDate"
         :time-from="8 * 60"
         :time-to="19 * 60"
@@ -31,10 +32,15 @@ div
         :editable-events="demoExample.editable"
         :events="demoExample.events"
         @cell-focus="selectedDate = $event.date || $event"
+        :on-event-click="onEventClick"
+        @click
         style="height: 450px")
         template(v-slot:split-label="{ split, view }")
           //- v-icon(:color="split.color" size="20") person
           strong(:style="`color: ${split.color};text-decoration: underline`") {{ split.label }}
+
+    div(style="width: 300px;height: 300px")
+      strong(@click="editEvent") {{selectedEvent.title}}
 </template>
 
 <script>
@@ -42,7 +48,7 @@ div
 import VueCal from 'vue-cal'
 import 'vue-cal/dist/vuecal.css'
 // import VCalendar from 'v-calendar';
-
+import 'vue-cal/dist/drag-and-drop.js'
 // Use v-calendar & v-date-picker components
 // Vue.use(VCalendar, {
 //   componentPrefix: 'vc'
@@ -50,7 +56,7 @@ import 'vue-cal/dist/vuecal.css'
 const demoExample = {
   splits: [{ label: 'John', class: 'john' }, { label: 'Kate', class: 'kate' }, { label: 'Healer', class: 'healer' }],
   // danh sach nguoi can gap trong ngay
-  editable: { title: false, drag: true, resize: true, create: true, delete: true },
+  editable: { title: false, drag: true, resize: true, create: true, delete: false },
   events: []
 }
 
@@ -153,7 +159,8 @@ export default {
         },
       ],
       demoExample,
-      selectedDate: new Date()
+      selectedDate: new Date(),
+      selectedEvent: {}
     }
   },
   computed: {
@@ -209,6 +216,7 @@ export default {
         start: `${monday} 15:30`,
         end: `${monday} 17:30`,
         title: 'Tennis',
+        subtitle: 'dâd',
         content: '<i class="v-icon material-icons mt-1">sports_tennis</i>',
         resizable: false,
         split: 1
@@ -254,6 +262,16 @@ export default {
         split: 3
       }
     )
+  },
+  methods: {
+    onEventClick(event, e) {
+      // console.log(event)
+      console.log(e);
+      this.selectedEvent = event;
+    },
+    editEvent() {
+      this.selectedEvent.title = 'title da chinh sua';
+    }
   }
 }
 </script>
