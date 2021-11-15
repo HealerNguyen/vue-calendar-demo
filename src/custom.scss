@@ -1,0 +1,141 @@
+@import "~tailwindcss/dist/tailwind.min.css";
+@import "~tailwindcss/dist/base.min.css";
+@import "~tailwindcss/dist/utilities.css";
+@import "~tailwindcss/dist/components.min.css";
+.vuecal__event {
+  background-color: rgb(144, 210, 190) !important;
+}
+.full-cal {
+  .vuecal__cell--selected {
+    background-color: #d3f5e4 !important;
+  }
+}
+.w-calendar {
+  max-width: 1000px;
+  width: 1000px;
+}
+h3 {
+  margin: 40px 0 0;
+}
+.text-red {
+  color: #f44336;
+}
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+
+$john: #42b983;
+$kate: #ff7fc8;
+.demo {
+  border-radius: 4px;
+  &.vuecal--date-picker .vuecal__cell-events-count {
+    width: 4px;
+    height: 4px;
+    min-width: 0;
+    padding: 0;
+    margin-top: 4px;
+    color: transparent;
+    background-color: $john;
+  }
+  &.vuecal--date-picker .vuecal__cell--selected .vuecal__cell-events-count {
+    background-color: #fff;
+  }
+  .vuecal__cell--out-of-scope {
+    color: rgba(0, 0, 0, 0.15);
+  }
+  &.full-cal .vuecal__menu {
+    background-color: transparent;
+  }
+  &.full-cal .vuecal__title-bar {
+    background: rgba(0, 0, 0, 0.03);
+  }
+  .vuecal__view-btn {
+    background: none;
+    padding: 0 10px;
+    margin: 4px 2px;
+    border-radius: 30px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 13px;
+    text-transform: uppercase;
+    border: none;
+    color: inherit;
+    &--active {
+      background: rgb(66, 185, 130);
+      color: #fff;
+    }
+  }
+  &.full-cal .weekday-label {
+    opacity: 0.4;
+    font-weight: 500;
+  }
+  .vuecal__header .v-icon {
+    color: inherit;
+  }
+  &:not(.vuecal--day-view) .vuecal__cell--selected {
+    background-color: transparent;
+  }
+  &:not(.vuecal--day-view).full-cal .vuecal__cell--selected:before {
+    border: 1px solid rgba($john, 0.8);
+  }
+  .vuecal__event-time {
+    margin: 3px 0;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  // John.
+  .vuecal__header .john {
+    color: darken($john, 5);
+  }
+  .vuecal__body .john {
+    background-color: rgba($john, 0.08);
+  }
+  .john .vuecal__event {
+    color: #fff;
+  }
+  .john .lunch {
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba($john, 0.15) 10px,
+      rgba($john, 0.15) 20px
+    );
+    color: transparentize(darken($john, 10), 0.4);
+  }
+  .vuecal__header .kate {
+    color: darken($kate, 5);
+  }
+  .vuecal__body .kate {
+    background-color: rgba($kate, 0.08);
+  }
+  .kate .vuecal__event {
+    color: #fff;
+  }
+  .kate .lunch {
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba($kate, 0.15) 10px,
+      rgba($kate, 0.15) 20px
+    );
+    color: transparentize(darken($kate, 10), 0.4);
+  }
+}
+.vuecal__event-content {
+  svg {
+    margin: auto;
+  }
+}
+.vuecal__cell-events {
+  .vuecal__event {
+    background-color: rgb(144, 210, 190) !important;
+  }
+}

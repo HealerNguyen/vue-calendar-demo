@@ -25,7 +25,10 @@
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",
     "core-js": "^3.19.1",
-    "sass-loader": "^10.1.1"
+    "sass-loader": "^10.1.1",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.3.11",
+    "tailwindcss": "^2.2.19"
   },
   "eslintConfig": {
     "root": true,
